@@ -156,6 +156,10 @@ if df is not None:
                 else:
                     st.error(f"🔴 Incorrect. Your answer: {user_choice}")
                     st.info(f"💡 Correct Answer is: **{correct_ans}**")
+                    # [အသစ်ထည့်ရန်] အဖြေပြန်ပြင်လိုပါက Reset လုပ်နိုင်သော ခလုတ်
+                if st.button("🔄 Change Answer"):
+                    st.session_state.checked_list[current_idx] = False
+                    st.rerun()
 
         # --- အဖြေအားလုံး တင်သွင်းပြီးချိန် ---
         elif st.session_state.submitted:
